@@ -55,6 +55,17 @@ public class SunInfo {
         return Double.toString(Math.round(sunsetAzimuth * 100) / 100);
     }
 
+    public String toString() {
+        return "SunInfo{" +
+                "sunrise=" + sunrise +
+                ", sunset=" + sunset +
+                ", twilightMorning=" + twilightMorning +
+                ", twilightEvening=" + twilightEvening +
+                ", sunsetAzimuth=" + sunsetAzimuth +
+                ", sunriseAzimuth=" + sunriseAzimuth +
+                '}';
+    }
+
     /**
      * --- GETTERS & SETTERS ---
      */

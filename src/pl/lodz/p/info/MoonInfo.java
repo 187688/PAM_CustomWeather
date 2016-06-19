@@ -58,6 +58,17 @@ public class MoonInfo {
         return moonDay + 1;
     }
 
+    public String toString() {
+        return "MoonInfo{" +
+                "moonAge=" + moonAge +
+                ", illumination=" + illumination +
+                ", moonrise=" + moonrise +
+                ", moonset=" + moonset +
+                ", nextFullMoon=" + nextFullMoon +
+                ", nextNewMoon=" + nextNewMoon +
+                '}';
+    }
+
     /**
      * --- GETTERS & SETTERS ---
      */
