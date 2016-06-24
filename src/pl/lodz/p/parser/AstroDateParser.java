@@ -10,14 +10,28 @@ import java.util.Date;
 public class AstroDateParser {
 
     public static Date parseAstroDateToDate (AstroDateTime astroTime) {
-        int day = astroTime.getDay();
-        int month = astroTime.getMonth();
         int year = astroTime.getYear();
+        int month = astroTime.getMonth();
+        int day = astroTime.getDay();
 
         int hour = astroTime.getHour();
         int minute = astroTime.getMinute();
         int second = astroTime.getSecond();
 
         return new Date(year, month, day, hour, minute, second);
+    }
+
+    public static AstroDateTime parseDateToAstroDate (Date date) {
+        int year = date.getYear();
+        int month = date.getMonth();
+        int day = date.getDay();
+
+        int hour = date.getHours();
+        int minute = date.getMinutes();
+        int second = date.getSeconds();
+
+        int timezoneOffset = date.getTimezoneOffset();
+
+        return new AstroDateTime(year, month, day, hour, minute, second, timezoneOffset, false);
     }
 }

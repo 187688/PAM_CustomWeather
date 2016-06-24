@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.widget.EditText;
+import android.widget.Toast;
 import pl.lodz.p.info.GeneralInfo;
 
 public class MainActivity extends Activity {
@@ -29,8 +30,9 @@ public class MainActivity extends Activity {
 
     public void testGeneralInfo() {
         GeneralInfo generalInfo = new GeneralInfo();
-        EditText text = (EditText) this.findViewById(R.id.editText);
-        text.setText(generalInfo.getMoonInfo().toString());
+        Toast.makeText(MainActivity.this, generalInfo.getMoonInfo().toString(), Toast.LENGTH_SHORT).show();
+        /*EditText text = (EditText) this.findViewById(R.id.editText);
+        text.setText(generalInfo.getMoonInfo().toString());*/
     }
 
 
