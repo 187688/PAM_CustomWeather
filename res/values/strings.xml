@@ -5,4 +5,12 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
 
+    <string name="settings.latitude">Długość geograficzna</string>
+    <string name="settings.longitude">Szerokość geograficzna</string>
+    <string name="settings.refreshInterval">Odśwież co</string>
+    <string name="settings.save">Zapisz</string>
+
+
+
+
 </resources>
