@@ -12,13 +12,16 @@ public class GeneralInfo {
 
     private SunInfo sunInfo;
 
-    private double longtitude;
+    private static double longitude;
 
-    private double latitude;
+    private static double latitude;
 
     private AstroCalculator astroCalculator;
 
-    private int refreshInterval;
+    /**
+     * Refreshing interval given in sec
+     */
+    private static int refreshInterval;
 
     public GeneralInfo () {
         mockCoordinates();
@@ -27,11 +30,11 @@ public class GeneralInfo {
 
     private void mockCoordinates() {
         latitude = 51.7592;
-        longtitude = 19.456;
+        longitude = 19.456;
     }
 
     private void initAstroCalculator() {
-        AstroCalculator.Location location = new AstroCalculator.Location(latitude, longtitude);
+        AstroCalculator.Location location = new AstroCalculator.Location(latitude, longitude);
         AstroDateTime date = new AstroDateTime();
         astroCalculator = new AstroCalculator(date, location);
     }
@@ -46,5 +49,27 @@ public class GeneralInfo {
         return moonInfo;
     }
 
+    public static double getLongitude() {
+        return longitude;
+    }
 
+    public static void setLongitude(double longitude) {
+        GeneralInfo.longitude = longitude;
+    }
+
+    public static double getLatitude() {
+        return latitude;
+    }
+
+    public static void setLatitude(double latitude) {
+        GeneralInfo.latitude = latitude;
+    }
+
+    public static int getRefreshInterval() {
+        return refreshInterval;
+    }
+
+    public static void setRefreshInterval(int refreshInterval) {
+        GeneralInfo.refreshInterval = refreshInterval;
+    }
 }

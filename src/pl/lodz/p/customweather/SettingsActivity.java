@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import dmcs.astroWeather.activity.MainActivity;
 import dmcs.astroWeather.util.Parameter;
+import pl.lodz.p.info.GeneralInfo;
 
 /**
  * @author Mateusz Wieczorek
@@ -32,7 +33,7 @@ public class SettingsActivity extends Activity {
     }
 
     private void init() {
-        latitudeValue = (EditText) findViewById(R.id.latituteValue);
+        latitudeValue = (EditText) findViewById(R.id.latitudeValue);
         longitudeValue = (EditText) findViewById(R.id.longitudeValue);
         refreshingValue = (EditText) findViewById(R.id.refreshingValue);
         saveButton = (Button) findViewById(R.id.saveButton);
@@ -50,12 +51,10 @@ public class SettingsActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Vibrator vb = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-
                 try {
-                    Parameter.latitute = Double.valueOf(latitudeValue.getText().toString());
-                    Parameter.longitude = Double.valueOf(longitudeValue.getText().toString());
-                    Parameter.refreshIntervalInSec = Integer.valueOf(refreshingValue.getText().toString());
-                    vb.vibrate(30);
+                    GeneralInfo.setLatitude(Double.valueOf(latitudeValue.getText().toString()).doubleValue());
+                    GeneralInfo.setLongitude(Double.valueOf(longitudeValue.getText().toString()).doubleValue());
+                    GeneralInfo.setRefreshInterval(Integer.valueOf(refreshingValue.getText().toString()).intValue());
                     Intent intent = new Intent(SettingsActivity.this, MainActivity.class);
                     startActivity(intent);
                 } catch (NumberFormatException e) {
