@@ -55,6 +55,7 @@ public class SettingsActivity extends Activity {
                     GeneralInfo.setLatitude(Double.valueOf(latitudeValue.getText().toString()).doubleValue());
                     GeneralInfo.setLongitude(Double.valueOf(longitudeValue.getText().toString()).doubleValue());
                     GeneralInfo.setRefreshInterval(Integer.valueOf(refreshingValue.getText().toString()).intValue());
+                    GeneralInfo.updateAstroCalculator();
                     Intent intent = new Intent(SettingsActivity.this, MainActivity.class);
                     startActivity(intent);
                 } catch (NumberFormatException e) {

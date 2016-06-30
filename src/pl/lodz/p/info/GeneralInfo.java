@@ -8,43 +8,39 @@ import com.astrocalculator.AstroDateTime;
  */
 public class GeneralInfo {
 
-    private MoonInfo moonInfo;
+    private static MoonInfo moonInfo;
 
-    private SunInfo sunInfo;
+    private static SunInfo sunInfo;
 
     private static double longitude;
 
     private static double latitude;
 
-    private AstroCalculator astroCalculator;
+    private static AstroCalculator astroCalculator;
 
     /**
      * Refreshing interval given in sec
      */
     private static int refreshInterval;
 
-    public GeneralInfo () {
-        mockCoordinates();
-        initAstroCalculator();
-    }
 
-    private void mockCoordinates() {
+    public static void mockCoordinates() {
         latitude = 51.7592;
         longitude = 19.456;
     }
 
-    private void initAstroCalculator() {
+    public static void updateAstroCalculator() {
         AstroCalculator.Location location = new AstroCalculator.Location(latitude, longitude);
         AstroDateTime date = new AstroDateTime();
         astroCalculator = new AstroCalculator(date, location);
     }
 
-    public SunInfo getSunInfo() {
+    public static SunInfo getSunInfo() {
         sunInfo = new SunInfo(astroCalculator.getSunInfo());
         return sunInfo;
     }
 
-    public MoonInfo getMoonInfo() {
+    public static MoonInfo getMoonInfo() {
         moonInfo = new MoonInfo(astroCalculator.getMoonInfo());
         return moonInfo;
     }
