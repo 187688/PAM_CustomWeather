@@ -14,7 +14,7 @@ import dmcs.astroWeather.util.Parameter;
 import pl.lodz.p.info.GeneralInfo;
 
 /**
- * @author Mateusz Wieczorek
+ *
  */
 public class SettingsActivity extends Activity {
 
